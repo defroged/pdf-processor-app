@@ -1,7 +1,7 @@
 // api/process-pdf.js
 
 import { DocumentProcessorServiceClient } from '@google-cloud/documentai';
-import formidable from 'formidable';
+import { IncomingForm } from 'formidable';
 import fs from 'fs';
 
 export const config = {
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method Not Allowed' });
     }
 
-    const form = new formidable.IncomingForm();
+    const form = new IncomingForm();
 
     form.parse(req, async (err, fields, files) => {
         if (err) {
