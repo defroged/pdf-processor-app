@@ -44,14 +44,26 @@ try {
 
 
             const request = {
-                name: processorName,
-                rawDocument: {
-                    content: encodedFile,
-                    mimeType: 'application/pdf',
-                },
-            };
+    name: processorName,
+    rawDocument: {
+        content: encodedFile,
+        mimeType: 'application/pdf',
+    },
+};
 
-            const [result] = await client.processDocument(request);
+// Debug request details
+console.log("Processor Name:", request.name);
+console.log("MIME Type:", request.rawDocument.mimeType);
+console.log("Content Length:", request.rawDocument.content.length);
+
+try {
+    const [result] = await client.processDocument(request);
+    console.log("Processing result:", result);
+} catch (error) {
+    console.error("Error details:", error);
+    throw error;
+}
+
 
             // Extracted text and entities
             const document = result.document;
