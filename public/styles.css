@@ -1,3 +1,5 @@
+/* public/styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -24,4 +26,25 @@ h1 {
 #output {
     margin-top: 30px;
     text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.element {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.h1-title {
+    background-color: #e0f7fa;
+}
+
+.vocab {
+    background-color: #ffe0b2;
+}
+
+/* Add more styles for other classes as needed */
