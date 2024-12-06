@@ -12,7 +12,7 @@ export const config = {
 
 const client = new DocumentProcessorServiceClient({
     credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON),
-});
+}); // fixed
 
 const processorName = 'projects/352947746227/locations/us/processors/ddfc0425595073d4';
 
