@@ -14,8 +14,8 @@ const client = new DocumentProcessorServiceClient({
     credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON),
 });
 
-// Replace with your processor's full resource name
-const processorName = 'projects/your-project-id/locations/your-location/processors/your-processor-id';
+const processorName = 'projects/352947746227/locations/us/processors/ddfc0425595073d4';
+
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
