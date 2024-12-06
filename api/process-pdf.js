@@ -32,13 +32,22 @@ export default async function handler(req, res) {
 
         const file = files.file;
 
-        if (!file) {
-            return res.status(400).json({ message: 'No file uploaded' });
-        }
+if (!file) {
+    console.error("Files object:", files); // Debugging
+    return res.status(400).json({ message: 'No file uploaded' });
+}
 
-        try {
-            const fileBuffer = fs.readFileSync(file.filepath);
-            const encodedFile = fileBuffer.toString('base64');
+try {
+    // Handle missing filepath property
+    const filePath = file.filepath || file.file?.path || file.path;
+    if (!filePath) {
+        console.error("File object:", file); // Debugging
+        return res.status(500).json({ message: 'Uploaded file path is missing' });
+    }
+
+    const fileBuffer = fs.readFileSync(filePath);
+    const encodedFile = fileBuffer.toString('base64');
+
 
             const request = {
                 name: processorName,
