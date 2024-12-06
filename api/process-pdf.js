@@ -6,7 +6,7 @@ import fs from 'fs';
 
 export const config = {
     api: {
-        bodyParser: false, // Disables Vercel's default body parsing
+        bodyParser: false, 
     },
 };
 
